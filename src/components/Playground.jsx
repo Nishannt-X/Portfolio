@@ -332,7 +332,8 @@ function OrderPanel({ active }) {
       </div>
       <div className="mt-7 border-t border-line pt-5">
         <div className="mb-3 flex justify-between"><div className={mono}>Execution reports // tape</div><span className="font-mono text-[10px] text-dim">newest ↑</span></div>
-        <div className="min-h-52 space-y-1.5" aria-label="Recent trades">
+        {/* Fixed height fits all 7 tape rows (7 × ~51px + gaps ≈ 390px), so the card never grows while the sim runs. */}
+        <div className="h-[400px] space-y-1.5 overflow-hidden" aria-label="Recent trades">
           {snapshot.tape.length === 0 && <div className="py-8 font-mono text-xs text-dim">Waiting for first fill…</div>}
           {snapshot.tape.map((trade) => <div key={`${trade.id}-${trade.restingId}`} className="min-w-0 rounded-md border border-line bg-bg/60 px-2.5 py-2 font-mono text-[10px] tabular-nums">
             <div className="flex flex-wrap justify-between gap-x-2"><span className="text-dim">{new Date(trade.time).toLocaleTimeString('en-GB', { hour12: false })}</span><span className={trade.side === 'buy' ? 'text-build' : 'text-sell'}>{trade.side.toUpperCase()}</span><span className="text-ink">{formatTick(trade.tick)} × {trade.qty}</span></div>

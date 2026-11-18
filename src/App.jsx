@@ -4,9 +4,10 @@ import LiveBuild from './components/LiveBuild';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Impact from './components/Impact';
-import Pipeline from './components/Pipeline';
 import Work from './components/Work';
 import LiveNow from './components/LiveNow';
+import FloodFlow from './components/FloodFlow';
+import OnCallify from './components/OnCallify';
 import Experience from './components/Experience';
 import Playground from './components/Playground';
 import Leadership from './components/Leadership';
@@ -58,9 +59,10 @@ export default function App() {
       <main>
         <Hero />
         <Impact />
-        <Pipeline />
         <Work />
         <LiveNow />
+        <FloodFlow />
+        <OnCallify />
         <Experience />
         <Playground />
         <Leadership />

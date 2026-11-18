@@ -2,25 +2,11 @@ import { useEffect, useRef } from 'react';
 import { Stat, Tag } from './ui';
 import { stats, marquee } from '../data';
 
+// Quick-jump index: one-line hook + one figure each, linking to where the full story lives.
 const specs = [
-  {
-    i: '01.',
-    k: 'Voice AI',
-    title: 'AI-Setu',
-    desc: 'A voice AI that lives inside a normal phone call. Top 6 of 95,000+ at Amazon AI for Bharat.',
-  },
-  {
-    i: '02.',
-    k: 'Real-time ML',
-    title: 'NTPC telemetry',
-    desc: 'Kafka-backed sensor streaming at 21,000+ readings/hr, with an LSTM watching for anomalies.',
-  },
-  {
-    i: '03.',
-    k: 'Fintech',
-    title: 'FINOVA',
-    desc: 'Founding member of the finance club. Events that reached 500+ people.',
-  },
+  { i: '01.', k: 'Voice AI', title: 'AI-Setu', href: '#work-ai-setu', hook: 'Two languages, one ordinary phone call.', metric: 'Sub-second · 6 hops' },
+  { i: '02.', k: 'Real-time ML', title: 'NTPC telemetry', href: '#experience', hook: 'Kafka streams with an LSTM on anomaly watch.', metric: '85%+ F1' },
+  { i: '03.', k: 'Fintech', title: 'FINOVA', href: '#leadership', hook: 'Helped start the fintech club; ran its core team.', metric: '15 core team led' },
 ];
 
 /** Scale the giant word so it spans its container exactly, at any width. */
@@ -164,14 +150,24 @@ export default function Hero() {
           {/* Spec column */}
           <div className="grid gap-8 sm:grid-cols-3 sm:gap-6 lg:col-span-3 lg:grid-cols-1 lg:content-start lg:gap-9 lg:pt-2">
             {specs.map((s) => (
-              <div key={s.i} className="border-t border-line pt-4">
+              <a
+                key={s.i}
+                href={s.href}
+                className="group block border-t border-line pt-4 transition-colors hover:border-accent"
+              >
                 <p className="flex items-baseline justify-between font-mono text-[10px] uppercase tracking-[0.16em]">
                   <span className="font-bold text-accent">{s.i}</span>
                   <span className="text-dim">{s.k}</span>
                 </p>
-                <h3 className="mt-2.5 text-[19px] font-bold leading-tight tracking-[-0.035em]">{s.title}</h3>
-                <p className="mt-1.5 text-[13.5px] leading-snug text-dim">{s.desc}</p>
-              </div>
+                <h3 className="mt-2.5 flex items-baseline justify-between gap-3 text-[19px] font-bold leading-tight tracking-[-0.035em] transition-colors group-hover:text-accent">
+                  {s.title}
+                  <span aria-hidden="true" className="text-[15px] text-accent transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </h3>
+                <p className="mt-1.5 text-[13.5px] leading-snug text-dim">{s.hook}</p>
+                <p className="mt-2 font-mono text-[10.5px] font-bold uppercase tracking-[0.12em] text-ink">{s.metric}</p>
+              </a>
             ))}
           </div>
         </div>
