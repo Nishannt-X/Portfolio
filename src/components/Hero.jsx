@@ -86,7 +86,7 @@ export default function Hero() {
       </h1>
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col px-4 sm:px-6 md:px-10">
-        {/* Giant outlined surname + script greeting */}
+        {/* Giant outlined first name + script greeting */}
         <div ref={wordBox} className="relative mt-4 md:mt-6">
           <div className="parallax flex justify-center" aria-hidden="true">
             <div
@@ -95,7 +95,7 @@ export default function Hero() {
               className="outline-accent w-max select-none whitespace-nowrap leading-[0.84] tracking-[0.005em]"
               style={{ fontSize: '27vw' }}
             >
-              Dahiya
+              Nishant
             </div>
           </div>
           <p className="absolute bottom-[-0.15em] left-0 z-20 -rotate-3 font-script text-[clamp(2.1rem,6.2vw,5rem)] leading-none text-ink drop-shadow-[0_4px_18px_rgb(0_0_0/0.9)] sm:left-1">
@@ -109,9 +109,9 @@ export default function Hero() {
             <div
               data-layer
               aria-hidden="true"
-              className="inline-block bg-accent px-3.5 pb-1 pt-2 font-condensed text-[clamp(3.1rem,9vw,6.75rem)] uppercase leading-[0.92] tracking-[0.01em] text-on-accent shadow-[0_18px_50px_-14px_rgb(var(--accent-2-rgb)/0.55)] md:px-5"
+              className="inline-block bg-accent px-3.5 pb-1 pt-2 font-condensed text-[clamp(2.25rem,12.4vw,5.6rem)] uppercase leading-[0.92] tracking-[0.01em] lg:text-[clamp(2.9rem,calc(6.8vw-16px),5.1rem)] text-on-accent shadow-[0_18px_50px_-14px_rgb(var(--accent-2-rgb)/0.55)] md:px-5"
             >
-              Nishant.
+              Nishant Dahiya
             </div>
 
             <div className="mt-7">
