@@ -1,0 +1,6 @@
+originals
+skills-lock.json
+.agents
+.claude
+node_modules
+dist
